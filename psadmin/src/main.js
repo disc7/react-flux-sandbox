@@ -3,8 +3,6 @@
 // bootstrap expects jQuery to be there which is why we have to define it globally
 $ = jQuery = require('jquery');
 
-test = 1;
-
-var App = console.log('Fuck yes! From Browserify');
+var App = console.log('Hi from Browserify');
 
 module.exports = App;
