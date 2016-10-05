@@ -14,7 +14,7 @@ var config = {
   devBaseUrl: 'http://localhost',
   paths: {
     html: './src/*.html',
-    js: '.src/** /*.js',
+    js: './src/** /*.js',
     images: './src/images/*',
     css: [
           'node_modules/bootstrap/dist/css/bootstrap.min.css',
@@ -83,7 +83,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(config.paths.html, ['html'])
+  gulp.watch(config.paths.html, ['html']);
   gulp.watch(config.paths.js, ['js', 'lint']);
 });
 
