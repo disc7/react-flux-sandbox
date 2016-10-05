@@ -4,17 +4,21 @@
 $ = jQuery = require('jquery');
 var React = require('react');
 var Home = require('./components/homePage');
+var Authors = require('./components/authors/authorPage');
 var About = require('./components/about/aboutPage');
+var Header = require('./components/common/header');
 
 var App = React.createClass({
   render: function() {
     var Child;
     switch(this.props.route) {
       case 'about' : Child = About; break;
+      case 'authors' : Child = Authors; break;
       default: Child = Home;
     }
     return (
       <div>
+        <Header />
         <Child />
       </div>
       );
@@ -26,7 +30,7 @@ function render() {
   React.render(<App route={route} />, document.getElementById('app'));
 }
 
-window.addEventListener('haschange', render);
+// window.addEventListener('haschange', render);
 render();
 
 // React.render(<Home />, document.getElementById('app'));
