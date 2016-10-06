@@ -1,36 +1,9 @@
 // main.js is the bootstrap of our application
-// Reference jQuery by the dollar sign and by jQuery
-// bootstrap expects jQuery to be there which is why we have to define it globally
-$ = jQuery = require('jquery');
 var React = require('react');
-var Home = require('./components/homePage');
-var Authors = require('./components/authors/authorPage');
-var About = require('./components/about/aboutPage');
-var Header = require('./components/common/header');
+var Router = require('react-router');
+var routes = require('./routes');
 
-var App = React.createClass({
-  render: function() {
-    var Child;
-    switch(this.props.route) {
-      case 'about' : Child = About; break;
-      case 'authors' : Child = Authors; break;
-      default: Child = Home;
-    }
-    return (
-      <div>
-        <Header />
-        <Child />
-      </div>
-      );
-  }
+Router.run(routes, function(Handler) {
+  React.render(<Handler />, document.getElementById('app'));
 });
 
-function render() {
-  var route = window.location.hash.substr(1);
-  React.render(<App route={route} />, document.getElementById('app'));
-}
-
-// window.addEventListener('haschange', render);
-render();
-
-// React.render(<Home />, document.getElementById('app'));
