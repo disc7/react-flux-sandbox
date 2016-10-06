@@ -49136,13 +49136,11 @@ var About = React.createClass({displayName: "About",
 module.exports = About;
 
 },{"react":197}],201:[function(require,module,exports){
-/*eslint-disable strict */ //Disabling check because we can't run strict mode.
+/*eslint-disable strict */ //Disabling check because we can't run strict mode. Need global vars.
 
-// Reference jQuery by the dollar sign and by jQuery
-// bootstrap expects jQuery to be there which is why we have to define it globally
 var React = require('react');
 var Header = require('./common/header');
-var RouterHandler = require('react-router').RouterHandler;
+var RouteHandler = require('react-router').RouteHandler;
 $ = jQuery = require('jquery');
 
 var App = React.createClass({displayName: "App",
@@ -49154,7 +49152,7 @@ var App = React.createClass({displayName: "App",
           React.createElement(RouteHandler, null)
         )
       )
-      );
+    );
   }
 });
 
